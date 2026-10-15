@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco-Technopark</title>
   <style>
+    /* Плавная прокрутка страницы при клике на меню */
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: #16191e;
       background-image:
@@ -17,10 +21,39 @@
       margin: 0;
       padding: 0;
     }
-    .main-wrapper { max-width: 650px; margin: 60px auto; padding: 0 20px; }
+    .main-wrapper { max-width: 650px; margin: 40px auto; padding: 0 20px; }
+    
+    /* Стили для верхнего навигационного меню */
+    .nav-menu {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+      padding: 10px;
+      background: #1f242d;
+      border: 1px solid #2d3540;
+      border-radius: 6px;
+      color: #a0aec0 !important;
+      font-size: 0.9em;
+      font-weight: bold;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+    }
+    .nav-item:hover {
+      background: #282f3b;
+      color: #ffffff !important;
+      border-color: #2ecc71;
+    }
+    
     .step-1, .step-2, .step-3, .step-4, .step-5, .step-6 {
       padding: 35px; margin-bottom: 25px; border-radius: 12px; position: relative;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(46, 204, 113, 0.05);
+      scroll-margin-top: 20px; /* Отступ сверху при прокрутке */
     }
     .step-1::before, .step-2::before, .step-3::before, .step-4::before, .step-5::before {
       content: ""; position: absolute; top: -1px; left: -1px; width: 15px; height: 15px;
@@ -61,14 +94,22 @@
 
   <div class="main-wrapper">
     
-    <div style="text-align: right; margin-bottom: 25px; font-size: 0.9em;">
+    <!-- Языковая панель -->
+    <div style="text-align: right; margin-bottom: 15px; font-size: 0.9em;">
       <a href="ru.html" style="color: #aaa; text-decoration: none;">РУС</a> 
       &nbsp;&nbsp;|&nbsp;&nbsp; 
       <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #2ecc71; padding-bottom: 2px;">ENG</span>
     </div>
 
+    <!-- ТРИ НАВИГАЦИОННЫЕ КНОПКИ В ШАПКЕ -->
+    <div class="nav-menu">
+      <a href="#home" class="nav-item">Home</a>
+      <a href="#authors" class="nav-item">For Authors</a>
+      <a href="#team" class="nav-item">Join Team</a>
+    </div>
+
     <!-- STEP 1 -->
-    <div class="step-1">
+    <div class="step-1" id="home">
       <h1>🌿 Eco-Technopark [DAEMI]</h1>
       <p><strong>We are a community of engineers and eco-enthusiasts. Right now, we are joining forces to create the first nature-friendly technological space in our city.</strong></p>
     </div>
@@ -84,14 +125,14 @@
       </ul>
     </div>
 
-    <!-- STEP 3: For Authors -->
-    <div class="step-3">
+    <!-- STEP 3 -->
+    <div class="step-3" id="authors">
       <h3>💡 For Project Authors & Startups</h3>
       <p>If you have a green technology idea, a blueprint, or a ready eco-device prototype (from smart waste sorters to air/water purification systems), we are ready to offer a testing ground, engineering expertise from our community, and support with media promotion.</p>
     </div>
 
-    <!-- STEP 4: Who we need -->
-    <div class="step-4">
+    <!-- STEP 4 -->
+    <div class="step-4" id="team">
       <h3>🔍 What Interests Us & Who We Need</h3>
       <p>We are building this project from scratch, so like-minded people are critical to us. Right now we are looking for:</p>
       <ul>
