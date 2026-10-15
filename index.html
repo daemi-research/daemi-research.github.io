@@ -3,12 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eco-Technopark</title>
+  <title>DAEMI — Scientific & Technical Cooperation</title>
   <style>
-    /* Плавная прокрутка страницы при клике на меню */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       background-color: #16191e;
       background-image:
@@ -21,41 +18,22 @@
       margin: 0;
       padding: 0;
     }
-    .main-wrapper { max-width: 650px; margin: 40px auto; padding: 0 20px; }
+    .main-wrapper { max-width: 680px; margin: 40px auto; padding: 0 20px; }
     
-    /* Стили для верхнего навигационного меню */
-    .nav-menu {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
+    .nav-menu { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
     .nav-item {
-      flex: 1;
-      min-width: 100px;
-      text-align: center;
-      padding: 10px;
-      background: #1f242d;
-      border: 1px solid #2d3540;
-      border-radius: 6px;
-      color: #a0aec0 !important;
-      font-size: 0.9em;
-      font-weight: bold;
-      text-decoration: none !important;
-      transition: all 0.2s ease;
+      flex: 1; min-width: 100px; text-align: center; padding: 12px; background: #1f242d;
+      border: 1px solid #2d3540; border-radius: 6px; color: #a0aec0 !important;
+      font-size: 0.85em; font-weight: bold; text-decoration: none !important; transition: all 0.2s ease;
     }
-    .nav-item:hover {
-      background: #282f3b;
-      color: #ffffff !important;
-      border-color: #2ecc71;
-    }
+    .nav-item:hover { background: #282f3b; color: #ffffff !important; border-color: #2ecc71; }
     
-    .step-1, .step-2, .step-3, .step-4, .step-5, .step-6 {
+    .step-1, .step-2, .step-3, .step-4, .step-5 {
       padding: 35px; margin-bottom: 25px; border-radius: 12px; position: relative;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(46, 204, 113, 0.05);
-      scroll-margin-top: 20px; /* Отступ сверху при прокрутке */
+      scroll-margin-top: 20px;
     }
-    .step-1::before, .step-2::before, .step-3::before, .step-4::before, .step-5::before {
+    .step-1::before, .step-2::before, .step-3::before, .step-4::before {
       content: ""; position: absolute; top: -1px; left: -1px; width: 15px; height: 15px;
       border-top: 3px solid #2ecc71; border-left: 3px solid #2ecc71; border-top-left-radius: 8px;
     }
@@ -63,21 +41,25 @@
     .step-2 { background: linear-gradient(135deg, #242a33, #1a1e26); border: 1px solid #323b47; margin-left: 20px; }
     .step-3 { background: linear-gradient(135deg, #29303a, #1d222a); border: 1px solid #3a4554; margin-left: 40px; }
     .step-4 { background: linear-gradient(135deg, #2d3541, #212730); border: 1px solid #404a59; margin-left: 60px; }
-    .step-5 { background: linear-gradient(135deg, #323b49, #252c36); border: 1px solid #475366; margin-left: 80px; }
-    .step-6 {
-      background: #111418; border: 1px solid #2ecc71; margin-left: 100px; display: flex; gap: 15px; flex-wrap: wrap;
-    }
+    .step-5 { background: #111418; border: 1px solid #2ecc71; margin-left: 80px; display: flex; gap: 15px; flex-wrap: wrap; }
+    
     @media (max-width: 800px) { 
-      .step-2, .step-3, .step-4, .step-5, .step-6 { margin-left: 0px !important; } 
+      .step-2, .step-3, .step-4, .step-5 { margin-left: 0px !important; } 
     }
-    h1 { color: #ffffff; font-size: 2.1em; margin: 0 0 12px 0; letter-spacing: -0.5px; }
-    h3 { color: #ffffff; font-size: 1.35em; margin: 0 0 15px 0; }
+    
+    h1 { color: #ffffff; font-size: 1.85em; margin: 0 0 12px 0; letter-spacing: -0.5px; line-height: 1.3; }
+    h3 { color: #ffffff; font-size: 1.3em; margin: 0 0 15px 0; }
     ul { padding-left: 20px; margin: 0; }
-    li { margin-bottom: 8px; }
-    p { margin: 0 0 15px 0; }
+    li { margin-bottom: 10px; }
+    p { margin: 0 0 15px 0; line-height: 1.6; }
     p:last-child { margin-bottom: 0; }
+    
+    .instruction-step { margin-bottom: 20px; }
+    .instruction-step:last-child { margin-bottom: 0; }
+    .step-num { color: #2ecc71; font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 4px; }
+
     .btn-eco {
-      flex: 1; min-width: 160px; text-align: center; display: inline-block; padding: 15px 24px;
+      flex: 1; min-width: 240px; text-align: center; display: inline-block; padding: 16px 24px;
       background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); color: #ffffff !important;
       border-radius: 8px; font-weight: bold; text-decoration: none !important; border: 1px solid #219653;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 8px 20px rgba(46, 204, 113, 0.3);
@@ -87,73 +69,96 @@
       background: linear-gradient(135deg, #2ecc71 0%, #1abc9c 100%); transform: translateY(-2px);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 12px 24px rgba(46, 204, 113, 0.45);
     }
-    .btn-eco:active { transform: translateY(2px); box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2); }
   </style>
 </head>
 <body>
 
   <div class="main-wrapper">
     
-    <!-- Языковая панель -->
+    <!-- Language Switcher -->
     <div style="text-align: right; margin-bottom: 15px; font-size: 0.9em;">
       <a href="ru.html" style="color: #aaa; text-decoration: none;">РУС</a> 
       &nbsp;&nbsp;|&nbsp;&nbsp; 
       <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #2ecc71; padding-bottom: 2px;">ENG</span>
     </div>
 
-    <!-- ТРИ НАВИГАЦИОННЫЕ КНОПКИ В ШАПКЕ -->
+    <!-- Navigation -->
     <div class="nav-menu">
-      <a href="#home" class="nav-item">Home</a>
-      <a href="#authors" class="nav-item">For Authors</a>
-      <a href="#team" class="nav-item">Join Team</a>
+      <a href="#about" class="nav-item">About Project</a>
+      <a href="#materials" class="nav-item">Data Submission</a>
+      <a href="#instruction" class="nav-item">Regulations & Steps</a>
     </div>
 
     <!-- STEP 1 -->
-    <div class="step-1" id="home">
-      <h1>🌿 Eco-Technopark [DAEMI]</h1>
-      <p><strong>We are a community of engineers and eco-enthusiasts. Right now, we are joining forces to create the first nature-friendly technological space in our city.</strong></p>
+    <div class="step-1" id="about">
+      
+      <!-- Векторный Хай-Тек Логотип DAEMI -->
+      <div style="text-align: center; margin-bottom: 25px;">
+        <svg xmlns="http://w3.org" viewBox="0 0 100 100" style="width: 70px; height: 70px; filter: drop-shadow(0 0 8px rgba(46, 204, 113, 0.4));">
+          <circle cx="50" cy="50" r="38" stroke="#2ecc71" stroke-width="1.5" fill="none" stroke-dasharray="5 3" opacity="0.3"/>
+          <circle cx="50" cy="50" r="18" stroke="#2ecc71" stroke-width="2.5" fill="none" opacity="0.8"/>
+          <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+          <line x1="50" y1="5" x2="50" y2="25" stroke="#2ecc71" stroke-width="2" opacity="0.7"/>
+          <line x1="50" y1="75" x2="50" y2="95" stroke="#2ecc71" stroke-width="2" opacity="0.7"/>
+          <line x1="5" y1="50" x2="25" y2="50" stroke="#2ecc71" stroke-width="2" opacity="0.7"/>
+          <line x1="75" y1="50" x2="95" y2="50" stroke="#2ecc71" stroke-width="2" opacity="0.7"/>
+          <path d="M 28 28 L 35 35 M 72 28 L 65 35 M 28 72 L 35 65 M 72 72 L 65 65" stroke="#2ecc71" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+        <div style="font-family: monospace; font-size: 0.85em; color: #2ecc71; letter-spacing: 4px; margin-top: 5px; text-transform: uppercase; font-weight: bold; opacity: 0.9;">
+          DATA HUB // SYSTEM ACTIVE
+        </div>
+      </div>
+
+      <h1>📡 Scientific & Technical Cooperation and Data Reception</h1>
+      <p>The international project <strong>DAEMI</strong> invites profiles specialists, engineers, GIS analysts, and independent researchers to cooperate.</p>
+      <p>If you possess up-to-date monitoring results, archived databases, or field studies regarding the environmental situation in the industrial regions of the Seversky Donets River basin and the Sea of Azov, you can integrate them into our global database on a commercial basis.</p>
     </div>
 
     <!-- STEP 2 -->
-    <div class="step-2">
-      <h3>🚀 Plans & Activities</h3>
-      <p style="color: #cbd5e1;">The project is at the launch stage. We plan to:</p>
+    <div class="step-2" id="materials">
+      <h3>📋 Materials Accepted for Verification:</h3>
       <ul>
-        <li><strong>🤝 Participate</strong> in the development and testing of eco-installation prototypes.</li>
-        <li><strong>🧠 Conduct</strong> open lectures and practical workshops.</li>
-        <li><strong>🌱 Support</strong> local green and environmental initiatives.</li>
+        <li><strong>💧 Hydrology:</strong> Information on mine water level dynamics, reservoir status, and chemical composition of regional water bodies.</li>
+        <li><strong>🌍 Geology and Soils:</strong> Land subsidence maps over mine workings, data on soil erosion, and technogenic land contamination.</li>
+        <li><strong>💨 Atmosphere:</strong> Results of local air quality measurements (PM2.5/PM10, sulfur dioxide, nitrogen oxides).</li>
+        <li><strong>🗄️ Archives:</strong> Digitized data sheets, reports from laboratories and research institutes from past periods.</li>
       </ul>
     </div>
 
     <!-- STEP 3 -->
-    <div class="step-3" id="authors">
-      <h3>💡 For Project Authors & Startups</h3>
-      <p>If you have a green technology idea, a blueprint, or a ready eco-device prototype (from smart waste sorters to air/water purification systems), we are ready to offer a testing ground, engineering expertise from our community, and support with media promotion.</p>
+    <div class="step-3" id="instruction">
+      <h3>⚙️ Submission Regulations and Processing Standards</h3>
+      <p style="color: #cbd5e1; margin-bottom: 20px;">To ensure the protection of commercial secrets and researcher confidentiality, the reception of materials is automated and follows international IT standards.</p>
+      
+      <div class="instruction-step">
+        <span class="step-num">1. File Preparation</span>
+        <p>Before sending graphic materials or tables, it is recommended to use the standard procedure for clearing file metadata (file properties -> "Remove personal information"). This is a standard global practice to protect the researcher's copyrights.</p>
+      </div>
+
+      <div class="instruction-step">
+        <span class="step-num">2. Data Upload</span>
+        <p>To prevent server overload, we do not accept heavy attachments via email. Please upload data arrays to any cloud platforms (e.g., Mega, Wormhole, or OneDrive) and provide only the download link.</p>
+      </div>
     </div>
 
     <!-- STEP 4 -->
-    <div class="step-4" id="team">
-      <h3>🔍 What Interests Us & Who We Need</h3>
-      <p>We are building this project from scratch, so like-minded people are critical to us. Right now we are looking for:</p>
-      <ul>
-        <li><strong>Engineers and Inventors</strong> — to collaborate on hardware prototypes;</li>
-        <li><strong>Ecologists and Scientists</strong> — for scientific expertise and idea validation;</li>
-        <li><strong>IT Specialists and 3D Modellers</strong> — to create digital eco-systems;</li>
-        <li><strong>Media Activists and Content Authors</strong> — to tell the world about our project;</li>
-        <li><strong>Volunteers</strong> — ready to help with our first steps.</li>
-      </ul>
+    <div class="step-4">
+      <h3>💳 Compensation Procedure & Payment Gateway</h3>
+      
+      <div class="instruction-step">
+        <span class="step-num">3. Verification & Payout</span>
+        <p>Each received data submission undergoes automated verification. If the scientific value of the provided material is confirmed, a fee is paid to the author from the project's contracted IT fund.</p>
+      </div>
+
+      <div class="instruction-step">
+        <span class="step-num">4. Cryptographic Settlements</span>
+        <p>Payments are made in the international digital format <strong>USDT (TRC-20 / BEP-20)</strong>. This allows direct "buyer-to-seller" settlements without delays caused by international banking compliance. Payment is sent to your specified wallet address within 48 hours after data verification.</p>
+      </div>
     </div>
 
     <!-- STEP 5 -->
     <div class="step-5">
-      <h3>📢 Join Us!</h3>
-      <p>We need active hands and bright minds. Feel free to contact us with any questions: from partnership proposals to a simple "I want to join".</p>
-    </div>
-
-    <!-- STEP 6 -->
-    <div class="step-6">
-      <a href="mailto:engineering.daemi@proton.me" class="btn-eco">Email Us</a>
-      <a href="https://t.me" class="btn-eco" style="background: linear-gradient(135deg, #2f80ed 0%, #1f3a60 100%); border-color: #1f3a60;" target="_blank">Join Telegram</a>
+      <a href="mailto:engineering.daemi@proton.me" class="btn-eco">✉️ Engineering Department: project.daemi@proton.me</a>
     </div>
 
   </div>
