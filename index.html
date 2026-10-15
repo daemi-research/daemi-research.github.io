@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eco-Technopark</title>
   <style>
-    /* 1. Технологичный фон: графит + лазерная эко-сетка */
     body {
       background-color: #16191e;
-      /* Рисуем неоновую сетку и технологичные точки из линий прямо на фоне */
       background-image:
         linear-gradient(rgba(46, 204, 113, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(46, 204, 113, 0.03) 1px, transparent 1px),
@@ -19,132 +17,63 @@
       margin: 0;
       padding: 0;
     }
-
-    .main-wrapper {
-      max-width: 650px;
-      margin: 60px auto;
-      padding: 0 20px;
+    .main-wrapper { max-width: 650px; margin: 60px auto; padding: 0 20px; }
+    .step-1, .step-2, .step-3, .step-4, .step-5, .step-6 {
+      padding: 35px; margin-bottom: 25px; border-radius: 12px; position: relative;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(46, 204, 113, 0.05);
     }
-
-    /* 2. Ступенчатые блоки с кибер-эко узорами (подсветка углов и рамки) */
-    .step-1, .step-2, .step-3, .step-4 {
-      padding: 35px;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      position: relative;
-      /* Внутреннее технологичное свечение блоков */
-      box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(46, 204, 113, 0.05);
+    .step-1::before, .step-2::before, .step-3::before, .step-4::before, .step-5::before {
+      content: ""; position: absolute; top: -1px; left: -1px; width: 15px; height: 15px;
+      border-top: 3px solid #2ecc71; border-left: 3px solid #2ecc71; border-top-left-radius: 8px;
     }
-
-    /* Узор: добавляем неоновые технологичные уголки на каждый блок */
-    .step-1::before, .step-2::before, .step-3::before {
-      content: "";
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      width: 15px;
-      height: 15px;
-      border-top: 3px solid #2ecc71;
-      border-left: 3px solid #2ecc71;
-      border-top-left-radius: 8px;
+    .step-1 { background: linear-gradient(135deg, #20252d, #181b21); border: 1px solid #2d3540; margin-left: 0px; }
+    .step-2 { background: linear-gradient(135deg, #242a33, #1a1e26); border: 1px solid #323b47; margin-left: 20px; }
+    .step-3 { background: linear-gradient(135deg, #29303a, #1d222a); border: 1px solid #3a4554; margin-left: 40px; }
+    .step-4 { background: linear-gradient(135deg, #2d3541, #212730); border: 1px solid #404a59; margin-left: 60px; }
+    .step-5 { background: linear-gradient(135deg, #323b49, #252c36); border: 1px solid #475366; margin-left: 80px; }
+    .step-6 {
+      background: #111418; border: 1px solid #2ecc71; margin-left: 100px; display: flex; gap: 15px; flex-wrap: wrap;
     }
-
-    /* Ступень 1: Темный уголь */
-    .step-1 {
-      background: linear-gradient(135deg, #20252d, #181b21);
-      border: 1px solid #2d3540;
-      margin-left: 0px;
+    @media (max-width: 800px) { 
+      .step-2, .step-3, .step-4, .step-5, .step-6 { margin-left: 0px !important; } 
     }
-    
-    /* Ступень 2: Графитовый сдвиг */
-    .step-2 {
-      background: linear-gradient(135deg, #262c36, #1c2028);
-      border: 1px solid #363f4d;
-      margin-left: 25px;
-    }
-    
-    /* Ступень 3: Светлый матовый графит */
-    .step-3 {
-      background: linear-gradient(135deg, #2d3541, #212730);
-      border: 1px solid #404a59;
-      margin-left: 50px;
-    }
-
-    /* Ступень 4: Финальный уровень кнопок с ярким контуром */
-    .step-4 {
-      background: #111418;
-      border: 1px solid #2ecc71; /* Яркая эко-рамка */
-      margin-left: 75px;
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 800px) {
-      .step-2, .step-3, .step-4 { margin-left: 0px !important; }
-    }
-
     h1 { color: #ffffff; font-size: 2.1em; margin: 0 0 12px 0; letter-spacing: -0.5px; }
     h3 { color: #ffffff; font-size: 1.35em; margin: 0 0 15px 0; }
     ul { padding-left: 20px; margin: 0; }
     li { margin-bottom: 8px; }
     p { margin: 0 0 15px 0; }
     p:last-child { margin-bottom: 0; }
-
-    /* 3. Массивные, супер-объемные 3D кнопки */
     .btn-eco {
-      flex: 1;
-      min-width: 160px;
-      text-align: center;
-      display: inline-block;
-      padding: 15px 24px;
-      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-      color: #ffffff !important;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none !important;
-      border: 1px solid #219653;
-      box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -4px 0 rgba(0, 0, 0, 0.3),
-        0 8px 20px rgba(46, 204, 113, 0.3);
-      transition: all 0.1s ease;
-      cursor: pointer;
+      flex: 1; min-width: 160px; text-align: center; display: inline-block; padding: 15px 24px;
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%); color: #ffffff !important;
+      border-radius: 8px; font-weight: bold; text-decoration: none !important; border: 1px solid #219653;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 8px 20px rgba(46, 204, 113, 0.3);
+      transition: all 0.1s ease; cursor: pointer;
     }
-
     .btn-eco:hover {
-      background: linear-gradient(135deg, #2ecc71 0%, #1abc9c 100%);
-      transform: translateY(-2px);
-      box-shadow: 
-        inset 0 1px 0 rgba(255, 255, 255, 0.5),
-        inset 0 -4px 0 rgba(0, 0, 0, 0.3),
-        0 12px 24px rgba(46, 204, 113, 0.45);
+      background: linear-gradient(135deg, #2ecc71 0%, #1abc9c 100%); transform: translateY(-2px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -4px 0 rgba(0, 0, 0, 0.3), 0 12px 24px rgba(46, 204, 113, 0.45);
     }
-
-    .btn-eco:active {
-      transform: translateY(2px);
-      box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+    .btn-eco:active { transform: translateY(2px); box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2); }
   </style>
 </head>
 <body>
 
   <div class="main-wrapper">
     
-    <!-- Переключатель: ENG активен, ведет на ru.html -->
     <div style="text-align: right; margin-bottom: 25px; font-size: 0.9em;">
       <a href="ru.html" style="color: #aaa; text-decoration: none;">РУС</a> 
       &nbsp;&nbsp;|&nbsp;&nbsp; 
       <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #2ecc71; padding-bottom: 2px;">ENG</span>
     </div>
 
+    <!-- STEP 1 -->
     <div class="step-1">
       <h1>🌿 Eco-Technopark [DAEMI]</h1>
       <p><strong>We are a community of engineers and eco-enthusiasts. Right now, we are joining forces to create the first nature-friendly technological space in our city.</strong></p>
     </div>
 
+    <!-- STEP 2 -->
     <div class="step-2">
       <h3>🚀 Plans & Activities</h3>
       <p style="color: #cbd5e1;">The project is at the launch stage. We plan to:</p>
@@ -155,12 +84,33 @@
       </ul>
     </div>
 
+    <!-- STEP 3: For Authors -->
     <div class="step-3">
-      <h3>📢 Join the Team!</h3>
-      <p>We are building this project from scratch through the power of our community. If you are an engineer, ecologist, designer, or urbanist — join us. We need active hands and bright minds!</p>
+      <h3>💡 For Project Authors & Startups</h3>
+      <p>If you have a green technology idea, a blueprint, or a ready eco-device prototype (from smart waste sorters to air/water purification systems), we are ready to offer a testing ground, engineering expertise from our community, and support with media promotion.</p>
     </div>
 
+    <!-- STEP 4: Who we need -->
     <div class="step-4">
+      <h3>🔍 What Interests Us & Who We Need</h3>
+      <p>We are building this project from scratch, so like-minded people are critical to us. Right now we are looking for:</p>
+      <ul>
+        <li><strong>Engineers and Inventors</strong> — to collaborate on hardware prototypes;</li>
+        <li><strong>Ecologists and Scientists</strong> — for scientific expertise and idea validation;</li>
+        <li><strong>IT Specialists and 3D Modellers</strong> — to create digital eco-systems;</li>
+        <li><strong>Media Activists and Content Authors</strong> — to tell the world about our project;</li>
+        <li><strong>Volunteers</strong> — ready to help with our first steps.</li>
+      </ul>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step-5">
+      <h3>📢 Join Us!</h3>
+      <p>We need active hands and bright minds. Feel free to contact us with any questions: from partnership proposals to a simple "I want to join".</p>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step-6">
       <a href="mailto:engineering.daemi@proton.me" class="btn-eco">Email Us</a>
       <a href="https://t.me" class="btn-eco" style="background: linear-gradient(135deg, #2f80ed 0%, #1f3a60 100%); border-color: #1f3a60;" target="_blank">Join Telegram</a>
     </div>
