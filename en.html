@@ -6,14 +6,7 @@
   <title>Eco-Technopark</title>
   <style>
     body {
-      background-color: #111317;
-      background-image: 
-        linear-gradient(30deg, #15181c 12%, transparent 12.5%, transparent 87%, #15181c 87.5%, #15181c),
-        linear-gradient(150deg, #15181c 12%, transparent 12.5%, transparent 87%, #15181c 87.5%, #15181c),
-        linear-gradient(60deg, #1c1f24 25%, transparent 25.5%, transparent 75%, #1c1f24 75.5%, #1c1f24),
-        linear-gradient(60deg, #1c1f24 25%, transparent 25.5%, transparent 75%, #1c1f24 75.5%, #1c1f24);
-      background-size: 20px 35px;
-      background-position: 0 0, 0 0, 0 0, 10px 18px;
+      background-color: #14171c;
       color: #e2e8f0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
@@ -24,11 +17,11 @@
     body::before {
       content: "";
       position: fixed;
-      left: -50px;
-      top: 10%;
-      width: 250px;
-      height: 600px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Cpath d='M10,90 Q30,50 80,10 M25,70 Q45,65 50,55 M35,55 Q55,52 60,40 M45,40 Q65,38 70,25 M20,78 Q10,65 5,55 M32,60 Q22,48 15,38 M45,45 Q35,32 28,22' stroke='%2310b981' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.07'/%3E%3C/svg%3E");
+      left: 10px;
+      top: 15%;
+      width: 220px;
+      height: 500px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Cpath d='M10,90 Q30,50 80,10 M25,70 Q45,65 50,55 M35,55 Q55,52 60,40 M45,40 Q65,38 70,25 M20,78 Q10,65 5,55 M32,60 Q22,48 15,38 M45,45 Q35,32 28,22' stroke='%232ecc71' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.15'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
@@ -36,75 +29,76 @@
     body::after {
       content: "";
       position: fixed;
-      right: -50px;
-      bottom: 5%;
-      width: 280px;
-      height: 650px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Cpath d='M90,90 Q70,40 20,10 M75,70 Q55,63 45,50 M65,52 Q45,47 38,32 M55,35 Q35,30 28,15 M80,80 Q90,68 95,55 M68,62 Q78,50 82,38 M55,45 Q65,32 70,20' stroke='%2310b981' stroke-width='1.5' fill='none' stroke-linecap='round' opacity='0.06'/%3E%3C/svg%3E");
+      right: 10px;
+      bottom: 15%;
+      width: 220px;
+      height: 500px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Cpath d='M90,90 Q70,40 20,10 M75,70 Q55,63 45,50 M65,52 Q45,47 38,32 M55,35 Q35,30 28,15 M80,80 Q90,68 95,55 M68,62 Q78,50 82,38 M55,45 Q65,32 70,20' stroke='%232ecc71' stroke-width='2' fill='none' stroke-linecap='round' opacity='0.12'/%3E%3C/svg%3E");
       background-size: contain;
       background-repeat: no-repeat;
       pointer-events: none;
       transform: scaleX(-1);
     }
     .main-wrapper {
-      max-width: 680px;
-      margin: 40px auto;
+      max-width: 650px;
+      margin: 50px auto;
       padding: 0 20px;
       position: relative;
-      z-index: 2;
+      z-index: 5;
     }
     .step-1, .step-2, .step-3, .step-4 {
-      padding: 30px;
-      margin-bottom: 16px;
-      border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      padding: 35px;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
-    .step-1 { background: linear-gradient(135deg, #282d35, #1e2229); border: 1px solid #353b45; margin-left: 0px; }
-    .step-2 { background: linear-gradient(135deg, #323842, #242930); border: 1px solid #3f4652; margin-left: 20px; }
-    .step-3 { background: linear-gradient(135deg, #3b424e, #2b313a); border: 1px solid #4a5362; margin-left: 40px; }
+    .step-1 { background: linear-gradient(135deg, #242930, #1b1e24); border: 1px solid #363d47; margin-left: 0px; }
+    .step-2 { background: linear-gradient(135deg, #2c323b, #20252c); border: 1px solid #414a57; margin-left: 25px; }
+    .step-3 { background: linear-gradient(135deg, #343b46, #262c34); border: 1px solid #4c5766; margin-left: 50px; }
     .step-4 {
-      background: linear-gradient(135deg, #20242b, #16191e);
+      background: #1a1d24;
       border: 1px solid #2d333d;
-      margin-left: 60px;
+      margin-left: 75px;
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
     }
-    @media (max-width: 850px) {
-      body::before, body::after { display: none !important; }
+    @media (max-width: 800px) {
       .step-2, .step-3, .step-4 { margin-left: 0px !important; }
+      body::before, body::after { display: none !important; }
     }
-    h1 { color: #ffffff; font-size: 2em; margin: 0 0 10px 0; }
-    h3 { color: #ffffff; font-size: 1.3em; margin: 0 0 15px 0; }
+    h1 { color: #ffffff; font-size: 2.1em; margin: 0 0 12px 0; }
+    h3 { color: #ffffff; font-size: 1.35em; margin: 0 0 15px 0; }
     ul { padding-left: 20px; margin: 0; }
     li { margin-bottom: 8px; }
-    p { margin: 0 0 15px 0; }
+    p { margin: 0 0 15px 0; line-height: 1.6; }
+    p:last-child { margin-bottom: 0; }
     .btn-eco {
       flex: 1;
       min-width: 160px;
       text-align: center;
       display: inline-block;
-      padding: 14px 24px;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
       color: #ffffff !important;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none !important;
-      border: 1px solid #047857;
+      border: 1px solid #219653;
       box-shadow: 
         inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -4px 0 rgba(0, 0, 0, 0.3),
-        0 8px 20px rgba(16, 185, 129, 0.3);
+        inset 0 -4px 0 rgba(0, 0, 0, 0.25),
+        0 8px 20px rgba(46, 204, 113, 0.25);
       transition: all 0.1s ease;
       cursor: pointer;
     }
     .btn-eco:hover {
-      background: linear-gradient(135deg, #14d495 0%, #06b67e 100%);
+      background: linear-gradient(135deg, #40e0d0 0%, #2ecc71 100%);
       transform: translateY(-2px);
       box-shadow: 
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
-        inset 0 -4px 0 rgba(0, 0, 0, 0.3),
-        0 12px 24px rgba(16, 185, 129, 0.45);
+        inset 0 -4px 0 rgba(0, 0, 0, 0.25),
+        0 12px 24px rgba(46, 204, 113, 0.4);
     }
     .btn-eco:active {
       transform: translateY(2px);
@@ -118,20 +112,17 @@
 
   <div class="main-wrapper">
     
-    <!-- Language Switcher (ENG is active, РУС links back to index.html) -->
-    <div style="text-align: right; margin-bottom: 20px; font-size: 0.9em;">
+    <div style="text-align: right; margin-bottom: 25px; font-size: 0.9em;">
       <a href="index.html" style="color: #aaa; text-decoration: none;">РУС</a> 
       &nbsp;&nbsp;|&nbsp;&nbsp; 
-      <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #10b981; padding-bottom: 2px;">ENG</span>
+      <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #2ecc71; padding-bottom: 2px;">ENG</span>
     </div>
 
-    <!-- STEP 1: Main Intro -->
     <div class="step-1">
       <h1>🌿 Eco-Technopark [DAEMI]</h1>
       <p><strong>We are a community of engineers and eco-enthusiasts. Right now, we are joining forces to create the first nature-friendly technological space in our city.</strong></p>
     </div>
 
-    <!-- STEP 2: Plans -->
     <div class="step-2">
       <h3>🚀 Plans & Activities</h3>
       <p style="color: #cbd5e1;">The project is at the launch stage. We plan to:</p>
@@ -142,16 +133,14 @@
       </ul>
     </div>
 
-    <!-- STEP 3: Call to Action -->
     <div class="step-3">
       <h3>📢 Join the Team!</h3>
       <p>We are building this project from scratch through the power of our community. If you are an engineer, ecologist, designer, or urbanist — join us. We need active hands and bright minds!</p>
     </div>
 
-    <!-- STEP 4: 3D Contact Buttons -->
     <div class="step-4">
       <a href="mailto:engineering.daemi@proton.me" class="btn-eco">Email Us</a>
-      <a href="https://t.me" class="btn-eco" style="background: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%); border-color: #1a365d;" target="_blank">Join Telegram</a>
+      <a href="https://t.me" class="btn-eco" style="background: linear-gradient(135deg, #2f80ed 0%, #1f3a60 100%); border-color: #1f3a60;" target="_blank">Join Telegram</a>
     </div>
 
   </div>
