@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Эко-Технопарк</title>
   <style>
+    html { scroll-behavior: smooth; }
     body {
       background-color: #16191e;
       background-image:
@@ -17,12 +18,20 @@
       margin: 0;
       padding: 0;
     }
-    .main-wrapper { max-width: 650px; margin: 60px auto; padding: 0 20px; }
+    .main-wrapper { max-width: 650px; margin: 40px auto; padding: 0 20px; }
     
-    /* Добавляем новые ступени в список стилей */
+    .nav-menu { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .nav-item {
+      flex: 1; min-width: 100px; text-align: center; padding: 10px; background: #1f242d;
+      border: 1px solid #2d3540; border-radius: 6px; color: #a0aec0 !important;
+      font-size: 0.9em; font-weight: bold; text-decoration: none !important; transition: all 0.2s ease;
+    }
+    .nav-item:hover { background: #282f3b; color: #ffffff !important; border-color: #2ecc71; }
+    
     .step-1, .step-2, .step-3, .step-4, .step-5, .step-6 {
       padding: 35px; margin-bottom: 25px; border-radius: 12px; position: relative;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(46, 204, 113, 0.05);
+      scroll-margin-top: 20px;
     }
     .step-1::before, .step-2::before, .step-3::before, .step-4::before, .step-5::before {
       content: ""; position: absolute; top: -1px; left: -1px; width: 15px; height: 15px;
@@ -33,15 +42,10 @@
     .step-3 { background: linear-gradient(135deg, #29303a, #1d222a); border: 1px solid #3a4554; margin-left: 40px; }
     .step-4 { background: linear-gradient(135deg, #2d3541, #212730); border: 1px solid #404a59; margin-left: 60px; }
     .step-5 { background: linear-gradient(135deg, #323b49, #252c36); border: 1px solid #475366; margin-left: 80px; }
-    
-    /* Ступень кнопок — финальная */
     .step-6 {
       background: #111418; border: 1px solid #2ecc71; margin-left: 100px; display: flex; gap: 15px; flex-wrap: wrap;
     }
-    
-    @media (max-width: 800px) { 
-      .step-2, .step-3, .step-4, .step-5, .step-6 { margin-left: 0px !important; } 
-    }
+    @media (max-width: 800px) { .step-2, .step-3, .step-4, .step-5, .step-6 { margin-left: 0px !important; } }
     h1 { color: #ffffff; font-size: 2.1em; margin: 0 0 12px 0; letter-spacing: -0.5px; }
     h3 { color: #ffffff; font-size: 1.35em; margin: 0 0 15px 0; }
     ul { padding-left: 20px; margin: 0; }
@@ -66,14 +70,21 @@
 
   <div class="main-wrapper">
     
-    <div style="text-align: right; margin-bottom: 25px; font-size: 0.9em;">
+    <div style="text-align: right; margin-bottom: 15px; font-size: 0.9em;">
       <span style="color: #ffffff; font-weight: bold; border-bottom: 2px solid #2ecc71; padding-bottom: 2px;">РУС</span> 
       &nbsp;&nbsp;|&nbsp;&nbsp; 
       <a href="index.html" style="color: #aaa; text-decoration: none;">ENG</a>
     </div>
 
+    <!-- ТРИ НАВИГАЦИОННЫЕ КНОПКИ В ШАПКЕ -->
+    <div class="nav-menu">
+      <a href="#home" class="nav-item">Главная</a>
+      <a href="#authors" class="nav-item">Авторам</a>
+      <a href="#team" class="nav-item">Кто нужен</a>
+    </div>
+
     <!-- СТУПЕНЬ 1 -->
-    <div class="step-1">
+    <div class="step-1" id="home">
       <h1>🌿 Эко-Технопарк [DAEMI]</h1>
       <p><strong>Мы — сообщество инженеров и эко-энтузиастов. Прямо сейчас мы объединяем усилия, чтобы создать первое технологическое пространство, дружелюбное к природе.</strong></p>
     </div>
@@ -89,14 +100,14 @@
       </ul>
     </div>
 
-    <!-- НОВАЯ СТУПЕНЬ 3: Для авторов проектов -->
-    <div class="step-3">
+    <!-- СТУПЕНЬ 3 -->
+    <div class="step-3" id="authors">
       <h3>💡 Авторам проектов и стартапам</h3>
       <p>Если у вас есть идея зеленой технологии, чертеж или готовый прототип эко-устройства (от умных сортировщиков до систем очистки воздуха/воды), мы готовы предложить площадку для тестов, инженерную экспертизу нашего сообщества и помощь в медийном продвижении.</p>
     </div>
 
-    <!-- НОВАЯ СТУПЕНЬ 4: Кто нам нужен -->
-    <div class="step-4">
+    <!-- СТУПЕНЬ 4 -->
+    <div class="step-4" id="team">
       <h3>🔍 Что нас интересует и кто нужен в команду</h3>
       <p>Мы строим этот проект с нуля, поэтому нам критически важны единомышленники. Прямо сейчас мы ищем:</p>
       <ul>
